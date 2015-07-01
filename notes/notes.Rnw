@@ -1,4 +1,3 @@
-
 \documentclass[11pt,oneside, a4paper]{amsart}
 \usepackage{natbib}
 
@@ -50,6 +49,7 @@
 
 \newtheorem{theorem}{Theorem}
 \begin{document}
+
 	
 \title{Some notes on VAR models for the EZ.}   
 \author{LAFC}
@@ -117,8 +117,14 @@ The options so far:
 
 
 <<ezdata,cache=TRUE>>=
+<<<<<<< HEAD
 library('lassovar')
 library('ggplot2')
+=======
+library(lassovar)
+library(ggplot2)
+library(reshape2)
+>>>>>>> upstream/master
 load('../Result/vardata')
 # loadind and subseting the data
 dat <- data.frame(vardataframe[116:180, c(1,2,6,11,13,17,8,24) ])
