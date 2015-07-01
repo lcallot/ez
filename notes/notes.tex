@@ -169,8 +169,8 @@ The options so far:
 \begin{knitrout}
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
-\hlkwd{library}\hlstd{(lassovar)}
-\hlkwd{library}\hlstd{(ggplot2)}
+\hlkwd{library}\hlstd{(}\hlstr{'lassovar'}\hlstd{)}
+\hlkwd{library}\hlstd{(}\hlstr{'ggplot2'}\hlstd{)}
 \hlkwd{load}\hlstd{(}\hlstr{'../Result/vardata'}\hlstd{)}
 \hlcom{# loadind and subseting the data}
 \hlstd{dat} \hlkwb{<-} \hlkwd{data.frame}\hlstd{(vardataframe[}\hlnum{116}\hlopt{:}\hlnum{180}\hlstd{,} \hlkwd{c}\hlstd{(}\hlnum{1}\hlstd{,}\hlnum{2}\hlstd{,}\hlnum{6}\hlstd{,}\hlnum{11}\hlstd{,}\hlnum{13}\hlstd{,}\hlnum{17}\hlstd{,}\hlnum{8}\hlstd{,}\hlnum{24}\hlstd{) ])}
@@ -194,10 +194,12 @@ The options so far:
 ## Model estimated equation by equation
 ## Selection criterion: BIC
 ## Estimator: Lasso
+## Deterministics: intercept.
 ## Dimensions: T = 64  N = 8
 ## 
 ## Total number of variables selected:26 (40.625% of candidates)
-## [1] "Model summary statistics:"
+## 
+##  Model summary statistics:
 ##            Lambda non-zero    resid var
 ## CPE   0.009137410        3 1.679413e-04
 ## DJES  0.047738176        3 7.856802e+01
@@ -207,6 +209,8 @@ The options so far:
 ## POILU 0.037676144        4 2.943369e-01
 ## LHO   0.018900280        1 1.011330e-03
 ## YED   0.007223302        5 1.002183e-04
+## 
+## Deterministics not included in the non-zero count.
 \end{verbatim}
 \begin{alltt}
 \hlstd{lv_lev_trend}\hlkwb{<-}\hlkwd{lassovar}\hlstd{(dat,}\hlkwc{lags}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{ic}\hlstd{=}\hlstr{"BIC"}\hlstd{,}\hlkwc{exo}\hlstd{=}\hlkwd{seq}\hlstd{(}\hlnum{1}\hlopt{:}\hlkwd{nrow}\hlstd{(dat)))}
@@ -219,10 +223,12 @@ The options so far:
 ## Model estimated equation by equation
 ## Selection criterion: BIC
 ## Estimator: Lasso
+## Deterministics: intercept.
 ## Dimensions: T = 64  N = 8
 ## 
 ## Total number of variables selected:30 (41.66667% of candidates)
-## [1] "Model summary statistics:"
+## 
+##  Model summary statistics:
 ##            Lambda non-zero    resid var
 ## CPE   0.009137410        4 1.667344e-04
 ## DJES  0.052392590        4 7.243895e+01
@@ -232,6 +238,8 @@ The options so far:
 ## POILU 0.009332668        5 2.867100e-01
 ## LHO   0.018900280        1 1.011330e-03
 ## YED   0.007223302        5 1.002183e-04
+## 
+## Deterministics not included in the non-zero count.
 \end{verbatim}
 \begin{alltt}
 \hlstd{lv_dif}\hlkwb{<-}\hlkwd{lassovar}\hlstd{(difdat,}\hlkwc{lags}\hlstd{=}\hlnum{1}\hlstd{,} \hlkwc{ic}\hlstd{=}\hlstr{"BIC"}\hlstd{)}
@@ -244,10 +252,12 @@ The options so far:
 ## Model estimated equation by equation
 ## Selection criterion: BIC
 ## Estimator: Lasso
+## Deterministics: intercept.
 ## Dimensions: T = 63  N = 8
 ## 
 ## Total number of variables selected:16 (25% of candidates)
-## [1] "Model summary statistics:"
+## 
+##  Model summary statistics:
 ##             Lambda non-zero    resid var
 ## CPE   0.0024551858        0 8.912461e-05
 ## DJES  1.8958393270        2 8.264576e+01
@@ -257,6 +267,8 @@ The options so far:
 ## POILU 0.1861160585        0 3.695596e-01
 ## LHO   0.0029187219        2 2.666321e-04
 ## YED   0.0014462239        2 4.939361e-05
+## 
+## Deterministics not included in the non-zero count.
 \end{verbatim}
 \end{kframe}
 \end{knitrout}

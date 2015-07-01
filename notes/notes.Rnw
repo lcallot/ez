@@ -117,13 +117,14 @@ The options so far:
 
 
 <<ezdata,cache=TRUE>>=
-library(lassovar)
-library(ggplot2)
+library('lassovar')
+library('ggplot2')
 load('../Result/vardata')
 # loadind and subseting the data
 dat <- data.frame(vardataframe[116:180, c(1,2,6,11,13,17,8,24) ])
 # differentiating
 difdat <- tail(dat,-1) - head(dat,-1)
+
 
 @
 
